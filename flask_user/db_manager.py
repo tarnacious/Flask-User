@@ -35,9 +35,7 @@ class DBManager(object):
         if self.db_adapter is None:
             try:
                 from flask_sqlalchemy import SQLAlchemy
-
-                if isinstance(db, SQLAlchemy):
-                    self.db_adapter = SQLDbAdapter(app, db)
+                self.db_adapter = SQLDbAdapter(app, db)
             except ImportError:
                 pass  # Ignore ImportErrors
 
