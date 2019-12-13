@@ -445,7 +445,8 @@ class UserManager(UserManager__Settings, UserManager__Utils, UserManager__Views)
                          methods=['GET', 'POST'])
         app.add_url_rule(self.USER_CHANGE_USERNAME_URL, 'user.change_username', change_username_stub,
                          methods=['GET', 'POST'])
-        app.add_url_rule(self.USER_CONFIRM_EMAIL_URL, 'user.confirm_email', confirm_email_stub)
+        app.add_url_rule(self.USER_CONFIRM_EMAIL_URL, 'user.confirm_email', confirm_email_stub,
+                         methods=['GET', 'POST'])
         app.add_url_rule(self.USER_EDIT_USER_PROFILE_URL, 'user.edit_user_profile', edit_user_profile_stub,
                          methods=['GET', 'POST'])
         app.add_url_rule(self.USER_EMAIL_ACTION_URL, 'user.email_action', email_action_stub)
