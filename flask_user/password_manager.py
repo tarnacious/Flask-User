@@ -69,6 +69,9 @@ class PasswordManager(object):
                     login_user(user)
         """
 
+        if password_hash == '':
+            return False
+
         # Print deprecation warning if called with (password, user) instead of (password, user.password)
         if isinstance(password_hash, self.user_manager.db_manager.UserClass):
             print(
